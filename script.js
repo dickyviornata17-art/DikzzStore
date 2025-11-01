@@ -121,3 +121,9 @@ window.addEventListener("click", function(e) {
     cartModal.style.display = "none";
   }
 });
+// ===== PARALLAX EFFECT =====
+window.addEventListener("scroll", function() {
+  const heroBg = document.querySelector(".hero-bg");
+  let scrollPos = window.scrollY;
+  heroBg.style.transform = `translateY(${scrollPos * 0.4}px)`;
+});
