@@ -152,3 +152,20 @@ body {
   background-color: #00bca6;
   transform: translateY(-2px);
 }
+
+/* Animasi Masuk dari Kiri */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== SMOOTH SCROLL ===== */
+html {
+  scroll-behavior: smooth;
+}
