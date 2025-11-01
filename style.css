@@ -169,3 +169,106 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Produk Section */
+.produk-section {
+  padding: 100px 5% 50px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 224, 198, 0.2);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3)),
+              url("img/bg.jpg") center/cover no-repeat;
+}
+.produk-h2{
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #24d1b5;
+  font-style: italic;
+}
+.produk-h2 span{
+  color: #ffffff;
+}
+
+.produk-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+  
+}
+
+.produk-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  height: 100%;
+  background: #1f1f1f;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 224, 198, 0.2);
+}
+
+.produk-card:hover {
+  transform: translateY(-8px);
+  
+}
+
+.produk-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  
+}
+
+.produk-card h3 {
+  color: var(--tosca);
+  margin: 10px 0 5px;
+}
+
+.produk-card p {
+  margin-bottom: 10px;
+  font-family: 'Franklin Gothic Medium';
+}
+
+.add-btn {
+    display: inline-flex;   
+  justify-content: center;     
+  align-items: center;         
+  text-align: center;
+  background: var(--tosca);
+  border: none;
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium';
+  color: #1f1f1f;
+  padding: 8px 15px;
+  align-items: center;
+  border-radius: 6px;
+  cursor: pointer;
+
+}
+.add-btn:hover{
+    background-color: #00bca6;
+  transform: translateY(-2px);
+}
+
+/* About Section */
+.about-section {
+  padding: 250px 10%;
+  padding-top: 200px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 24px;
+  font-style: italic;
+  box-shadow: 0 0 20px rgba(0, 224, 198, 0.2);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3)),
+    url("img/bg.jpg") center/cover no-repeat;
+}
+.about2 span{
+    color: #24d1b5;
+}
+.paragraph{
+    padding-left: 80px;
+    padding-right: 80px;
+    font-size: 18px;
+    text-align: justify;
+}
