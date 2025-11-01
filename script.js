@@ -79,3 +79,26 @@ document.getElementById("checkoutForm").addEventListener("submit", e => {
   const nama = document.getElementById("nama").value;
   const alamat = document.getElementById("alamat").value;
   const total = document.getElementById("totalBayar").textContent;
+
+  // Buat pesan WhatsApp
+  let pesan = `Halo, saya ingin memesan:\n\n`;
+  keranjang.forEach(item => {
+    pesan += `${item.nama} - Jumlah: ${item.jumlah} - Harga: Rp ${item.harga.toLocaleString()}\n`;
+  });
+  pesan += `\nTotal: Rp ${total}\nNama: ${nama}\nAlamat: ${alamat}\n\nMohon konfirmasi pesanan saya.`;
+
+  // Encode pesan untuk URL WhatsApp
+  const encodedPesan = encodeURIComponent(pesan);
+  const waUrl = `https://wa.me/6287865548076?text=${encodedPesan}`;
+
+  // Buka WhatsApp
+  window.open(waUrl, '_blank');
+
+  // Reset keranjang setelah checkout
+  keranjang = [];
+  updateKeranjang();
+  e.target.reset();
+
+  // Tutup modal
+  document.getElementById("cartModal").style.display = "none";
+});
