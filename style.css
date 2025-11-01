@@ -13,5 +13,47 @@ body {
   background: var(--dark-bg);
   color: var(--dark-text);
   transition: all 0.4s ease;
+}
+/* Navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 10px ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 20px rgba(0, 224, 198, 0.2);
+}
 
+.logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  padding-left: 20px;
+  color: #fff;
+  font-style: italic;
+}
+.logo span {
+  color: #00e0c6;
+  
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding-right: 40px;
+}
+
+.nav-links a {
+  color: var(--dark-text);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--tosca);
 }
