@@ -26,3 +26,48 @@ produkData.forEach(p => {
   `;
   produkList.appendChild(card);
 });
+
+// ====== KERANJANG ======
+function tambahKeKeranjang(id) {
+  const produk = produkData.find(p => p.id === id);
+  const item = keranjang.find(i => i.id === id);
+  if (item) item.jumlah++;
+  else keranjang.push({ ...produk, jumlah: 1 });
+  updateKeranjang();
+}
+
+function hapusDariKeranjang(id) {
+  keranjang = keranjang.filter(i => i.id !== id);
+  updateKeranjang();
+}
+
+function updateKeranjang() {
+  const list = document.getElementById("keranjangList");
+  list.innerHTML = "";
+  let total = 0;
+  let totalItems = 0;
+
+  keranjang.forEach(i => {
+    const subtotal = i.harga * i.jumlah;
+    total += subtotal;
+    totalItems += i.jumlah;
+    list.innerHTML += `
+      <tr>
+        <td>${i.nama}</td>
+        <td><input type="number" min="1" value="${i.jumlah}" onchange="ubahJumlah(${i.id}, this.value)"></td>
+        <td>Rp ${i.harga.toLocaleString()}</td>
+        <td>Rp ${subtotal.toLocaleString()}</td>
+        <td><button onclick="hapusDariKeranjang(${i.id})">Hapus</button></td>
+      </tr>
+    `;
+  });
+
+  document.getElementById("totalBayar").textContent = total.toLocaleString();
+  document.getElementById("cart-badge").textContent = totalItems;
+}
+
+function ubahJumlah(id, jumlah) {
+  const item = keranjang.find(i => i.id === id);
+  if (item) item.jumlah = parseInt(jumlah);
+  updateKeranjang();
+}
