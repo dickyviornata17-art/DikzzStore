@@ -102,3 +102,22 @@ document.getElementById("checkoutForm").addEventListener("submit", e => {
   // Tutup modal
   document.getElementById("cartModal").style.display = "none";
 });
+// ====== MODAL KERANJANG ======
+const cartModal = document.getElementById("cartModal");
+const cartIcon = document.querySelector(".cart-icon");
+const closeModal = document.querySelector(".close-modal");
+
+cartIcon.addEventListener("click", function(e) {
+  e.preventDefault();
+  cartModal.style.display = "block";
+});
+
+closeModal.addEventListener("click", function() {
+  cartModal.style.display = "none";
+});
+
+window.addEventListener("click", function(e) {
+  if (e.target == cartModal) {
+    cartModal.style.display = "none";
+  }
+});
