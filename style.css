@@ -272,3 +272,113 @@ html {
     font-size: 18px;
     text-align: justify;
 }
+
+/* ===== CHECKOUT SECTION (REVISED) ===== */
+.checkout-section {
+  padding: 100px 5%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.95));
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 224, 198, 0.2);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3)),
+    url("img/bg.jpg") center/cover no-repeat;
+}
+
+.checkout-section h2 {
+  font-size: 2rem;
+  color: #24d1b5;
+  margin-bottom: 40px;
+  font-style: italic;
+  text-shadow: 0 0 10px rgba(36, 209, 181, 0.4);
+}
+.checkout-section h2 span{
+    color: #fff;
+}
+
+.checkout-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(18, 18, 18, 0.95);
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 224, 198, 0.2);
+  animation: fadeIn 1s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.checkout-container table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #f4f4f4;
+  margin-bottom: 25px;
+}
+
+.checkout-container th, 
+.checkout-container td {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  
+}
+
+.checkout-container th {
+  color: var(--tosca);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.checkout-container input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: #1f1f1f;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  
+  
+}
+
+.checkout-container input:focus {
+  border-color: var(--tosca);
+  box-shadow: 0 0 8px rgba(36, 209, 181, 0.5);
+  outline: none;
+}
+
+.total {
+  text-align: right;
+  margin: 20px 0;
+  font-weight: bold;
+  color: var(--tosca);
+  font-size: 1.2rem;
+}
+
+/* Tombol utama checkout */
+.checkout-container .btn {
+  background: var(--tosca);
+  color: #000;
+  border: none;
+  width: 30%;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin-top: 12px;
+}
+.btn:hover {
+transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(12, 12, 14, 0.4);
+}
+
+/* Animasi masuk */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
