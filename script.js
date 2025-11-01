@@ -71,3 +71,11 @@ function ubahJumlah(id, jumlah) {
   if (item) item.jumlah = parseInt(jumlah);
   updateKeranjang();
 }
+// ====== CHECKOUT ======
+document.getElementById("checkoutForm").addEventListener("submit", e => {
+  e.preventDefault();
+  if (keranjang.length === 0) return alert("Keranjang kosong!");
+
+  const nama = document.getElementById("nama").value;
+  const alamat = document.getElementById("alamat").value;
+  const total = document.getElementById("totalBayar").textContent;
