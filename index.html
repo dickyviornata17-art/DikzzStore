@@ -50,5 +50,35 @@
         dan desain yang selalu up-to-date. Di Dikzz Store, Anda tidak hanya berbelanja pakaian, tetapi berinvestasi pada gaya yang berkarakter 
         dan kenyamanan maksimal.</p>
   </section>
+  <!-- KERANJANG -->
+  <div id="cartModal" class="cart-modal">
+    <div class="cart-modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Keranjang <span>Pesanan</span></h2>
+      <div class="checkout-container">
+        <table id="keranjangTable">
+          <thead>
+            <tr>
+              <th>Produk</th>
+              <th>Jumlah</th>
+              <th>Harga</th>
+              <th>Total</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="keranjangList"></tbody>
+        </table>
+        <div class="total">
+          Total: Rp <span id="totalBayar">0</span>
+        </div>
+
+        <form id="checkoutForm">
+          <input type="text" id="nama" placeholder="Nama Lengkap" required>
+          <input type="text" id="alamat" placeholder="Alamat Pengiriman" required>
+          <button type="submit" class="btn">Checkout</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
