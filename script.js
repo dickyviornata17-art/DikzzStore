@@ -1,4 +1,4 @@
-// ====== DATA PRODUK (VERSI LOKAL) ======
+// ====== DATA PRODUK ======
 const produkData = [
   { id: 1, nama: "Baju Muslim Pria Premium", harga: 180000, img: "img/produk1.avif" },
   { id: 2, nama: "Gamis Muslimah Elegan", harga: 200000, img: "img/produk2.jpg" },
@@ -12,3 +12,17 @@ const produkData = [
 ];
 
 let keranjang = [];
+
+// ====== RENDER PRODUK ======
+const produkList = document.getElementById("produkList");
+produkData.forEach(p => {
+  const card = document.createElement("div");
+  card.classList.add("produk-card");
+  card.innerHTML = `
+    <img src="${p.img}" alt="${p.nama}">
+    <h3>${p.nama}</h3>
+    <p>Rp ${p.harga.toLocaleString()}</p>
+    <button class="add-btn" onclick="tambahKeKeranjang(${p.id})">Tambah</button>
+  `;
+  produkList.appendChild(card);
+});
